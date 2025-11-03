@@ -1,0 +1,72 @@
+[
+  {
+    "id": "manifesto",
+    "name": "manifesto.ct9",
+    "type": "file",
+    "path": "/",
+    "locked": false,
+    "accessLevel": 0,
+    "preview": "The Circuit awaits those who dare to question...",
+    "timestamp": "2024-01-15T00:00:00Z"
+  },
+  {
+    "id": "conventional_thinking",
+    "name": "conventional_thinking.dossier",
+    "type": "file", 
+    "path": "/",
+    "locked": false,
+    "accessLevel": 1,
+    "preview": "Analysis of mainstream cognitive patterns and their inherent limitations...",
+    "timestamp": "2024-01-20T00:00:00Z"
+  },
+  {
+    "id": "research",
+    "name": "research",
+    "type": "folder",
+    "path": "/",
+    "locked": false,
+    "accessLevel": 0,
+    "children": [
+      {
+        "id": "ntp_research",
+        "name": "NTP_Research_Group.dossier", 
+        "type": "file",
+        "path": "/research",
+        "locked": true,
+        "accessLevel": 3,
+        "preview": "Neural Temporal Programming - Classified research into cognitive temporal manipulation...",
+        "timestamp": "2024-02-10T00:00:00Z"
+      },
+      {
+        "id": "cybernetic_reconstruction", 
+        "name": "Cybernetic_Reconstruction_Division.dossier",
+        "type": "file",
+        "path": "/research", 
+        "locked": true,
+        "accessLevel": 4,
+        "preview": "Advanced neuro-cybernetic integration protocols...",
+        "timestamp": "2024-02-15T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "id": "classified",
+    "name": "classified",
+    "type": "folder", 
+    "path": "/",
+    "locked": true,
+    "accessLevel": 5,
+    "children": [
+      {
+        "id": "rest_engine",
+        "name": "ResT_Engine.dossier",
+        "type": "file",
+        "path": "/classified", 
+        "locked": true,
+        "accessLevel": 5,
+        "preview": "Restricted Temporal Engine - Maximum classification...",
+        "timestamp": "2024-03-01T00:00:00Z"
+      }
+    ]
+  }
+]

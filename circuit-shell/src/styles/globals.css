@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --shell-bg: #071018;
+  --shell-primary: #00F0D0;
+  --shell-secondary: #0EB0A6;
+  --shell-accent: #FF3B30;
+  --shell-text: #E6F7F7;
+  --shell-muted: #4B5563;
+  --shell-corruption: #A66EFF;
+}
+
+body {
+  background-color: var(--shell-bg);
+  color: var(--shell-text);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.glow {
+  filter: drop-shadow(0 4px 12px rgba(0, 240, 208, 0.12));
+}
+
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 240, 208, 0.03) 50%
+  );
+  background-size: 100% 4px;
+}
+
+.corruption-overlay {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(166, 110, 255, 0.1) 2px,
+    rgba(166, 110, 255, 0.1) 4px
+  );
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.flicker {
+  animation: flicker 3s linear infinite;
+}
+
+.glitch-text {
+  animation: glitch 0.3s linear infinite;
+}
+
+/* Custom scrollbar for terminal */
+.terminal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 240, 208, 0.1);
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: var(--shell-primary);
+  border-radius: 3px;
+}
+
+/* Enhanced glitch effects */
+@keyframes glitch-1 {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+  0% { transform: translate(0); }
+  10% { transform: translate(2px, -2px); }
+  30% { transform: translate(-2px, 2px); }
+  50% { transform: translate(2px, 2px); }
+  70% { transform: translate(-2px, -2px); }
+  90% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch-1 0.5s infinite;
+  color: #00F0D0;
+  z-index: -1;
+}
+
+.glitch-text::after {
+  animation: glitch-2 0.5s infinite;
+  color: #A66EFF;
+  z-index: -2;
+}
+
+/* Terminal cursor blink */
+.terminal-cursor::after {
+  content: '▋';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
